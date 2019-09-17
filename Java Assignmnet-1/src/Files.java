@@ -22,16 +22,19 @@ public class Files {
                     Matcher m=input.matcher(f.getName());
                 if (m.find())
                     System.out.println(f.getPath());
-            }}
+               }
+            }
 
         }
-    public static void main(String args[]){
-            System.out.println("Enter regular expression:");
-            Scanner sc=new Scanner(System.in);
-            String regex=sc.next();
-        String home=System.getProperty("user.home");
-        Pattern p=Pattern.compile(regex);
-          searchDirForFile(home,p);
-    }
+        public static void main(String args[]) {
+            Scanner sc = new Scanner(System.in);
+            while(true) {
+               System.out.println("Enter regular expression:");
+               String regex = sc.next();
+               String home = System.getProperty("user.home");
+               Pattern p = Pattern.compile(regex);
+               searchDirForFile(home, p);
+            }
+        }
 
 }
